@@ -1,4 +1,4 @@
-REST with Spring
+Spring security tutorial
 
 Needed Tools
 
@@ -7,7 +7,7 @@ Needed Tools
 - Maven 3.x
 - MySql
 - Git
-- Postman Extension
+
 
 Steps
 
@@ -18,23 +18,5 @@ Steps
 - Run command mvn clean install
 - Deploy generated WAR file to Web container
 
-URL
 
- -http://localhost:8080/spring-mvc/author/addauthor (POST)
- 
- -http://localhost:8080/spring-mvc/author/updateauthor (POST)
- 
- -http://localhost:8080/spring-mvc/author/deleteauthor (POST)
- 
- -http://localhost:8080/spring-mvc/author/getallauthor (GET)
- 
- -http://localhost:8080/spring-mvc/book/addbook (POST)
- 
- -http://localhost:8080/spring-mvc/book/updatebook (POST)
- 
- -http://localhost:8080/spring-mvc/book/deletebook (POST)
- 
- -http://localhost:8080/spring-mvc/book/getallbook (GET)
- 
- Hit all those API Url using Postman extension with proper input attribute and request method type.
  
