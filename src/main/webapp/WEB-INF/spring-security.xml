@@ -6,6 +6,7 @@
 	http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
 	<http auto-config="true">
+	<access-denied-handler ref="customAccessDeniedHandler" />
 	<csrf disabled="true"/>
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login*" access="isAnonymous()" />
@@ -21,7 +22,7 @@
 	</http>
 	
 	<beans:bean id="customSuccessHandler"  class="org.mvc.security.config.CustomSuccessHandler" />
-	
+    <beans:bean id="customAccessDeniedHandler"  class="org.mvc.security.config.CustomAccessDeniedHandler" />
 	
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="userDetailsService">

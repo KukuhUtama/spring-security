@@ -1,5 +1,7 @@
 package org.mvc.security.controller;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,9 +12,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class IndexController {
+
+	private ModelAndView mv;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
@@ -28,25 +33,31 @@ public class IndexController {
 		return "redirect:/login.html?logout=true";
 	}
 
-	@RequestMapping(value={"", "/"},  method = RequestMethod.GET)
-	public String index(){
+	@RequestMapping(value = { "", "/" }, method = RequestMethod.GET)
+	public String index() {
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public String user() {
 		return "user";
 	}
-	
+
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String admin() {
 		return "admin";
 	}
-	
-	@RequestMapping(value = "/access-denied", method = RequestMethod.GET)
-	public String accessDenied() {
-		return "accessDenied";
+
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public ModelAndView aaccessDenied(Principal user) {
+		mv = new ModelAndView("403");
+		if (user != null) {
+			mv.addObject("msg", "Hi " + user.getName()
+			+ ", you do not have permission to access this page!");
+		} else {
+			mv.addObject("msg",
+			"You do not have permission to access this page!");
+		}
+		return mv;
 	}
 }
-
-//http://www.mkyong.com/spring-security/customize-http-403-access-denied-page-in-spring-security/
