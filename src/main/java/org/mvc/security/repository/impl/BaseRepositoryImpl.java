@@ -101,7 +101,6 @@ public abstract class BaseRepositoryImpl<T> implements BaseRepository<T> {
 	 */
 	public void update(T entity){
 		getCurrentSession().saveOrUpdate(entity);
-		System.out.println("In");
 	}
 	
 	/**

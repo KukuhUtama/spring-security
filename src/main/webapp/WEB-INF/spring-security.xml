@@ -13,12 +13,12 @@
 		<intercept-url pattern="/user/**" access="hasAuthority('USER')" />
 		<intercept-url pattern="/admin/**" access="hasAuthority('ADMIN')" />
 		
-		<form-login login-page="/login" 
+		<form-login login-page="/login.html" 
 		    authentication-success-handler-ref="customSuccessHandler"
-			authentication-failure-url="/login?error=true"
+			authentication-failure-url="/login.html?error=true"
 		    username-parameter="username"
 			password-parameter="password" />
-		<logout logout-success-url="/login?logout=true" />
+		<logout logout-success-url="/login.html?logout=true" />
 	</http>
 	
 	<beans:bean id="customSuccessHandler"  class="org.mvc.security.config.CustomSuccessHandler" />

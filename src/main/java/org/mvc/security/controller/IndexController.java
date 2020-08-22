@@ -19,12 +19,12 @@ public class IndexController {
 
 	private ModelAndView mv;
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login.html", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
 		return "login";
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout.html", method = RequestMethod.GET)
 	public String logOut(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth != null) {
@@ -33,22 +33,22 @@ public class IndexController {
 		return "redirect:/login.html?logout=true";
 	}
 
-	@RequestMapping(value = { "", "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "", "/", "/index.html" }, method = RequestMethod.GET)
 	public String index() {
 		return "index";
 	}
 
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	@RequestMapping(value = "/user.html", method = RequestMethod.GET)
 	public String user() {
 		return "user";
 	}
 
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin.html", method = RequestMethod.GET)
 	public String admin() {
 		return "admin";
 	}
 
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	@RequestMapping(value = "/403.html", method = RequestMethod.GET)
 	public ModelAndView aaccessDenied(Principal user) {
 		mv = new ModelAndView("403");
 		if (user != null) {
