@@ -14,7 +14,7 @@ Steps
 - Pull repository
 - Set JRE System Library in java Build Path point to JDK 1.8
 - Create new database with "hibernate" name
-- Edit user and password for MySql database at application.properties file respectively
+- Edit user and password for postgresql database at application.properties file respectively
 - Run command mvn clean install
 - Deploy generated WAR file to Web container
 
