@@ -27,7 +27,7 @@
 		<hibernate.core.version>5.2.5.Final</hibernate.core.version>
 		<validation.api.version>1.1.0.Final</validation.api.version>
 		<mysql.connector.version>5.1.16</mysql.connector.version>
-		<postgresql.connector.version>42.2.5</postgresql.connector.version>
+		<postgresql.connector.version>42.3.3</postgresql.connector.version>
 		<jackson.core.version>2.4.1</jackson.core.version>
 		<jackson.bind.version>2.4.1</jackson.bind.version>
 		<jsoup.version>1.11.3</jsoup.version>
